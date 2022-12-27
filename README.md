@@ -1,4 +1,4 @@
-# grapefruit_panini
+# Grapefruit Panini
 
 A new Flutter project.
 
