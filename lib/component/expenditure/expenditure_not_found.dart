@@ -9,16 +9,14 @@ class ExpenditureNotFound extends StatelessWidget {
     return Column(
       children: [
         GFCard(
-          content: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            child: Column(
-              children: const [
-                Image(image: AssetImage('img/expenditure_not_found.png')),
-                Padding(padding: EdgeInsets.only(top: 15)),
-                Text('這個月目前還沒有支出，'),
-                Text('快去創建一筆交易吧！'),
-              ],
-            ),
+          margin: const EdgeInsets.fromLTRB(15, 0, 15, 15),
+          content: Column(
+            children: const [
+              Image(image: AssetImage('img/expenditure_not_found.png')),
+              Padding(padding: EdgeInsets.only(top: 15)),
+              Text('這個月目前還沒有支出，'),
+              Text('快去創建一筆交易吧！'),
+            ],
           ),
         ),
       ],

@@ -15,7 +15,7 @@ class ExpenditureTile extends StatelessWidget {
 
   Icon _getIcon(String category) {
     switch (category) {
-      case '食物':
+      case '用餐':
         return Icon(
           Icons.circle_notifications_rounded,
           color: ThemeColor.info[500],
@@ -25,7 +25,7 @@ class ExpenditureTile extends StatelessWidget {
           Icons.build_circle_rounded,
           color: ThemeColor.success[500],
         );
-      case '三餐':
+      case '貨物':
         return Icon(
           Icons.account_circle_rounded,
           color: ThemeColor.warning[500],
@@ -45,14 +45,15 @@ class ExpenditureTile extends StatelessWidget {
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            paidDate,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+          GFTypography(
+            text: paidDate,
+            type: GFTypographyType.typo6,
+            fontWeight: FontWeight.bold,
+            dividerHeight: 0,
           ),
-          const Padding(padding: EdgeInsets.only(top: 5)),
           for (ExpenditureModel expenditure in expenditures)
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 2),
+              padding: const EdgeInsets.only(top: 5),
               child: Row(
                 children: [
                   _getIcon(expenditure.category),
@@ -66,7 +67,7 @@ class ExpenditureTile extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '-${NumberFormat('#,##0.00').format(expenditure.amount)}',
+                    NumberFormat('#,##0.00').format(expenditure.amount),
                     style: TextStyle(color: ThemeColor.danger[500]),
                   ),
                 ],

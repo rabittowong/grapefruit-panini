@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:grapefruit_panini/model/expenditure_model.dart';
-import 'package:grapefruit_panini/service/expenditure_service.dart';
-import 'package:grapefruit_panini/theme_color.dart';
 import 'package:intl/intl.dart';
 
 import '../../component/expenditure/expenditure_dashboard.dart';
 import '../../component/expenditure/expenditure_not_found.dart';
+import '../../model/expenditure_model.dart';
+import '../../service/expenditure_service.dart';
 import 'expenditure_create.dart';
 
 class ExpenditureContent extends StatefulWidget {
@@ -44,7 +43,7 @@ class ExpenditureContentState extends State<ExpenditureContent> {
       body: Column(
         children: [
           GFCard(
-            padding: const EdgeInsets.symmetric(vertical: 2),
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
             content: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -60,19 +60,22 @@ class ExpenditureDashboard extends StatelessWidget {
     return Column(
       children: [
         GFCard(
+          margin: const EdgeInsets.fromLTRB(15, 0, 15, 15),
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                '目前預算',
-                style: TextStyle(fontWeight: FontWeight.bold),
+              const GFTypography(
+                text: '目前預算',
+                type: GFTypographyType.typo6,
+                fontWeight: FontWeight.bold,
+                dividerHeight: 0,
               ),
-              const Padding(padding: EdgeInsets.only(top: 10)),
+              const Padding(padding: EdgeInsets.only(top: 5)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('${NumberFormat('#,##0.00').format(totalAmount)}'),
-                  Text('7,000.00'),
+                  Text(NumberFormat('#,##0.00').format(totalAmount)),
+                  const Text('7,000.00'),
                 ],
               ),
               GFProgressBar(
@@ -84,7 +87,6 @@ class ExpenditureDashboard extends StatelessWidget {
               )
             ],
           ),
-          margin: const EdgeInsets.fromLTRB(15, 10, 15, 25),
         ),
         Expanded(
           child: ListView.builder(
