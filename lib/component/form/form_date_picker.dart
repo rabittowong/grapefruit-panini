@@ -1,23 +1,21 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../theme_color.dart';
 
-class FormSelect extends StatelessWidget {
+class FormDatePicker extends StatelessWidget {
   final TextEditingController inputController;
   final String label;
   final Icon icon;
-  final List<String> items;
   final String? Function(String?) validator;
   final void Function(String?)? onChanged;
 
-  const FormSelect({
+  const FormDatePicker({
     Key? key,
     required this.inputController,
     required this.label,
     required this.icon,
     required this.validator,
-    required this.items,
     this.onChanged,
   }) : super(key: key);
 
@@ -25,17 +23,15 @@ class FormSelect extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 15),
-      child: DropdownButtonFormField2(
+      child: TextFormField(
+        controller: inputController,
         style: const TextStyle(fontSize: 14),
         decoration: InputDecoration(
           prefixIcon: icon,
           labelText: label,
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 5, vertical: 8),
+          contentPadding: EdgeInsets.zero,
           isDense: true,
           labelStyle: const TextStyle(fontSize: 14),
-          filled: true,
-          fillColor: Colors.white,
           enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.black26, width: 1),
           ),
@@ -49,35 +45,30 @@ class FormSelect extends StatelessWidget {
             borderSide: BorderSide(color: ThemeColor.danger[500]!, width: 1),
           ),
         ),
-        dropdownPadding: EdgeInsets.zero,
-        dropdownDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-        ),
-        offset: const Offset(0, -13),
-        selectedItemBuilder: (context) {
-          return items.map((item) {
-            return Transform.translate(
-              offset: const Offset(-16, 0),
-              child: Text(item),
-            );
-          }).toList();
+        onTap: () async {
+          final DateTime? pickedDate = await showDatePicker(
+            context: context,
+            initialDate:
+                DateTime.tryParse(inputController.text) ?? DateTime.now(),
+            firstDate: DateTime(2000),
+            lastDate: DateTime(2099),
+            helpText: label,
+            fieldLabelText: '選擇日期',
+            confirmText: '選擇',
+            cancelText: '取消',
+            errorFormatText: '不是正確的日期',
+            errorInvalidText: '不是正確的日期',
+          );
+
+          if (pickedDate != null) {
+            inputController.text = DateFormat('yyyy-MM-dd').format(pickedDate);
+          }
         },
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,
-        value: inputController.text.isEmpty ? null : inputController.text,
-        items: items.map((item) {
-          return DropdownMenuItem<String>(
-            value: item,
-            child: Text(item),
-          );
-        }).toList(),
-        itemHeight: 40,
         onChanged: (value) {
           if (onChanged != null) {
             onChanged!(value);
-          }
-          if (value != null) {
-            inputController.text = value;
           }
         },
       ),

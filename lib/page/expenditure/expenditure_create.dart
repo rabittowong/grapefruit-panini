@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:intl/intl.dart';
 
+import '../../component/form/form_date_picker.dart';
 import '../../component/form/form_input.dart';
 import '../../component/form/form_select.dart';
+import '../../enum/expenditure_category.dart';
+import '../../enum/expenditure_default_product.dart';
 import '../../model/expenditure_model.dart';
 import '../../theme_color.dart';
 
@@ -16,12 +19,57 @@ class ExpenditureCreate extends StatefulWidget {
 
 class ExpenditureCreateState extends State<ExpenditureCreate> {
   final GlobalKey<FormState> _formKey = GlobalKey();
-  final TextEditingController _paidAt = TextEditingController(
-      text: DateFormat('yyyy-MM-dd').format(DateTime.now()));
+  final TextEditingController _paidAt = TextEditingController();
+  final TextEditingController _defaultProduct = TextEditingController();
   final TextEditingController _product = TextEditingController();
   final TextEditingController _category = TextEditingController();
   final TextEditingController _amount = TextEditingController();
   final TextEditingController _remark = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    _paidAt.text = DateFormat('yyyy-MM-dd').format(DateTime.now());
+  }
+
+  void _onChangedDefaultProduct(String? value) {
+    if (value == null) {
+      return;
+    }
+
+    switch (ExpenditureDefaultProduct.values
+        .firstWhere((element) => element.toLabel() == value)) {
+      case ExpenditureDefaultProduct.breakfast:
+      case ExpenditureDefaultProduct.lunch:
+      case ExpenditureDefaultProduct.afternoonTea:
+      case ExpenditureDefaultProduct.dinner:
+        setState(() {
+          _product.text = value;
+          _category.text = ExpenditureCategory.food.toLabel();
+        });
+        break;
+      case ExpenditureDefaultProduct.railway:
+      case ExpenditureDefaultProduct.minibus:
+      case ExpenditureDefaultProduct.transport:
+        setState(() {
+          _product.text = value;
+          _category.text = ExpenditureCategory.transport.toLabel();
+        });
+        break;
+      case ExpenditureDefaultProduct.shopping:
+        setState(() {
+          _product.text = value;
+          _category.text = ExpenditureCategory.entertainment.toLabel();
+        });
+        break;
+      default:
+        setState(() {
+          _product.text = '';
+          _category.text = ExpenditureCategory.others.toLabel();
+        });
+    }
+  }
 
   void _onSubmit() {
     if (_formKey.currentState!.validate()) {
@@ -35,7 +83,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
         updatedBy: 'updatedBy',
       );
 
-      debugPrint('$expenditure');
+      debugPrint('created $expenditure');
     }
   }
 
@@ -59,7 +107,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
                     fontWeight: FontWeight.bold,
                     dividerHeight: 0,
                   ),
-                  FormInput(
+                  FormDatePicker(
                     inputController: _paidAt,
                     label: '日期',
                     icon: const Icon(Icons.calendar_month_outlined),
@@ -72,22 +120,40 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
                       return null;
                     },
                   ),
-                  FormInput(
-                    inputController: _product,
+                  FormSelect(
+                    inputController: _defaultProduct,
                     label: '消費項目',
                     icon: const Icon(Icons.shopping_basket_outlined),
+                    items: ExpenditureDefaultProduct.values
+                        .map((e) => e.toLabel())
+                        .toList(),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return '消費項目不能為空';
                       }
                       return null;
                     },
+                    onChanged: _onChangedDefaultProduct,
                   ),
+                  if (_defaultProduct.text == '其他')
+                    FormInput(
+                      inputController: _product,
+                      label: '自訂消費項目',
+                      icon: const Icon(Icons.shopping_basket_outlined),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return '自訂消費項目不能為空';
+                        }
+                        return null;
+                      },
+                    ),
                   FormSelect(
                     inputController: _category,
                     label: '種類',
                     icon: const Icon(Icons.category_outlined),
-                    items: const ['用餐', '交通', '貨物', '其他'],
+                    items: ExpenditureCategory.values
+                        .map((e) => e.toLabel())
+                        .toList(),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return '種類不能為空';

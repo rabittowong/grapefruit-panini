@@ -6,7 +6,6 @@ class FormInput extends StatelessWidget {
   final TextEditingController inputController;
   final String label;
   final Icon icon;
-  final bool obscureText;
   final TextInputType keyboardType;
   final String? Function(String?) validator;
   final void Function(String?)? onChanged;
@@ -16,7 +15,6 @@ class FormInput extends StatelessWidget {
     required this.inputController,
     required this.label,
     required this.icon,
-    this.obscureText = false,
     this.keyboardType = TextInputType.text,
     required this.validator,
     this.onChanged,
@@ -48,9 +46,7 @@ class FormInput extends StatelessWidget {
             borderSide: BorderSide(color: ThemeColor.danger[500]!, width: 1),
           ),
         ),
-        obscureText: obscureText,
         keyboardType: keyboardType,
-        cursorColor: Colors.grey.shade600,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,
         onChanged: (value) {

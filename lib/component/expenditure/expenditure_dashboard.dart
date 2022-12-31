@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:intl/intl.dart';
 
+import '../../enum/budget.dart';
 import '../../model/expenditure_model.dart';
 import '../../theme_color.dart';
 import 'expenditure_tile.dart';
@@ -25,7 +26,8 @@ class ExpenditureDashboard extends StatelessWidget {
     final double totalAmount = expenditures
         .map((e) => e.amount)
         .reduce((value, element) => value + element);
-    final double progressBarPercentage = min(max(totalAmount / 7000, 0), 1);
+    final double budget = Budget.expenditure.toValue();
+    final double progressBarPercentage = min(max(totalAmount / budget, 0), 1);
 
     late LinearGradient progressBarGradient;
     if (progressBarPercentage <= 0.7) {
@@ -75,7 +77,7 @@ class ExpenditureDashboard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(NumberFormat('#,##0.00').format(totalAmount)),
-                  const Text('7,000.00'),
+                  Text(NumberFormat('#,##0.00').format(budget)),
                 ],
               ),
               GFProgressBar(
