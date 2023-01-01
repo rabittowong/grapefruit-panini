@@ -9,7 +9,7 @@ class AppVersionService {
 
   static Future<List<AppVersionModel>> loadAppVersion() {
     return rootBundle
-        .loadString('data/appVersion_data.json')
+        .loadString('assets/data/appVersion_data.json')
         .then((data) => json.decode(data))
         .then((data) {
       final List<AppVersionModel> list = [];

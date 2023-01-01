@@ -6,13 +6,13 @@ class ExpenditureNotFound extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         GFCard(
           margin: const EdgeInsets.fromLTRB(15, 0, 15, 15),
           content: Column(
             children: const [
-              Image(image: AssetImage('img/expenditure_not_found.png')),
+              Image(image: AssetImage('assets/img/expenditure_not_found.png')),
               Padding(padding: EdgeInsets.only(top: 15)),
               Text('這個月目前還沒有支出，'),
               Text('快去創建一筆交易吧！'),

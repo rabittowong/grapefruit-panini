@@ -9,7 +9,7 @@ class ProfileService {
 
   static Future<List<ProfileModel>> loadProfile() {
     return rootBundle
-        .loadString('data/profile_data.json')
+        .loadString('assets/data/profile_data.json')
         .then((data) => json.decode(data))
         .then((data) {
       final List<ProfileModel> list = [];

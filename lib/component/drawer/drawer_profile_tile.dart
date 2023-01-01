@@ -37,7 +37,7 @@ class DrawerProfileTile extends StatelessWidget {
               ),
             if (profile.photoUrl == null)
               const GFAvatar(
-                backgroundImage: AssetImage('img/avatar_anoymous.png'),
+                backgroundImage: AssetImage('assets/img/avatar_anoymous.png'),
               ),
             Padding(
               padding: const EdgeInsets.only(top: 10),

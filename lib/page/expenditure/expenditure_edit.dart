@@ -4,12 +4,12 @@ import 'package:intl/intl.dart';
 
 import '../../component/dialog/dialog_confirm_delete.dart';
 import '../../component/form/form_date_picker.dart';
+import '../../component/form/form_elevated_button.dart';
 import '../../component/form/form_input.dart';
 import '../../component/form/form_select.dart';
 import '../../enum/expenditure_category.dart';
 import '../../enum/expenditure_default_product.dart';
 import '../../model/expenditure_model.dart';
-import '../../theme_color.dart';
 
 class ExpenditureEdit extends StatefulWidget {
   const ExpenditureEdit({Key? key, required this.expenditure})
@@ -138,7 +138,7 @@ class ExpenditureEditState extends State<ExpenditureEdit> {
       ),
       body: Form(
         key: _formKey,
-        child: Column(
+        child: ListView(
           children: [
             GFCard(
               content: Column(
@@ -225,11 +225,8 @@ class ExpenditureEditState extends State<ExpenditureEdit> {
                       return null;
                     },
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 12)),
-                  GFButton(
+                  FormElevatedButton(
                     text: '儲存',
-                    blockButton: true,
-                    color: ThemeColor.primary[500]!,
                     onPressed: _onSubmit,
                   ),
                 ],

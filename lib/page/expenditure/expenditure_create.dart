@@ -3,12 +3,12 @@ import 'package:getwidget/getwidget.dart';
 import 'package:intl/intl.dart';
 
 import '../../component/form/form_date_picker.dart';
+import '../../component/form/form_elevated_button.dart';
 import '../../component/form/form_input.dart';
 import '../../component/form/form_select.dart';
 import '../../enum/expenditure_category.dart';
 import '../../enum/expenditure_default_product.dart';
 import '../../model/expenditure_model.dart';
-import '../../theme_color.dart';
 
 class ExpenditureCreate extends StatefulWidget {
   const ExpenditureCreate({Key? key}) : super(key: key);
@@ -96,7 +96,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
       ),
       body: Form(
         key: _formKey,
-        child: Column(
+        child: ListView(
           children: [
             GFCard(
               content: Column(
@@ -183,11 +183,8 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
                       return null;
                     },
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 12)),
-                  GFButton(
+                  FormElevatedButton(
                     text: '新增',
-                    blockButton: true,
-                    color: ThemeColor.primary[500]!,
                     onPressed: _onSubmit,
                   ),
                 ],

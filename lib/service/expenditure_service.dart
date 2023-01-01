@@ -9,7 +9,7 @@ class ExpenditureService {
 
   static Future<List<ExpenditureModel>> loadExpenditure() {
     return rootBundle
-        .loadString('data/expenditure_data.json')
+        .loadString('assets/data/expenditure_data.json')
         .then((data) => json.decode(data))
         .then((data) {
       final List<ExpenditureModel> list = [];

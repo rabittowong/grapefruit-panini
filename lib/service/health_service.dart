@@ -9,7 +9,7 @@ class HealthService {
 
   static Future<List<HealthModel>> loadHealth() {
     return rootBundle
-        .loadString('data/health_data.json')
+        .loadString('assets/data/health_data.json')
         .then((data) => json.decode(data))
         .then((data) {
       final List<HealthModel> list = [];

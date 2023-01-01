@@ -9,7 +9,7 @@ class AuthLoading extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: RiveAnimation.asset(
-          'riv/bounce_rabbit.riv',
+          'assets/riv/bounce_rabbit.riv',
           fit: BoxFit.cover,
         ),
       ),

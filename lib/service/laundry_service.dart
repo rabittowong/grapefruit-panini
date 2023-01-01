@@ -9,7 +9,7 @@ class LaundryService {
 
   static Future<List<LaundryModel>> loadLaundry() {
     return rootBundle
-        .loadString('data/laundry_data.json')
+        .loadString('assets/data/laundry_data.json')
         .then((data) => json.decode(data))
         .then((data) {
       final List<LaundryModel> list = [];

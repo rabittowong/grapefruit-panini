@@ -9,7 +9,7 @@ class NotepadService {
 
   static Future<List<NotepadModel>> loadNotepad() {
     return rootBundle
-        .loadString('data/notepad_data.json')
+        .loadString('assets/data/notepad_data.json')
         .then((data) => json.decode(data))
         .then((data) {
       final List<NotepadModel> list = [];

@@ -1,7 +1,7 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme_color.dart';
+import 'custom_dropdown.dart';
 
 class FormSelect extends StatelessWidget {
   final TextEditingController inputController;
@@ -25,7 +25,7 @@ class FormSelect extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 15),
-      child: DropdownButtonFormField2(
+      child: CustomDropdownButtonFormField<String>(
         style: const TextStyle(fontSize: 14),
         decoration: InputDecoration(
           prefixIcon: icon,
@@ -49,35 +49,20 @@ class FormSelect extends StatelessWidget {
             borderSide: BorderSide(color: ThemeColor.danger[500]!, width: 1),
           ),
         ),
-        dropdownPadding: EdgeInsets.zero,
-        dropdownDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-        ),
-        offset: const Offset(0, -13),
-        selectedItemBuilder: (context) {
-          return items.map((item) {
-            return Transform.translate(
-              offset: const Offset(-16, 0),
-              child: Text(item),
-            );
-          }).toList();
-        },
+        borderRadius: BorderRadius.circular(5),
+        value: inputController.text.isEmpty ? null : inputController.text,
+        items: [
+          for (final item in items)
+            CustomDropdownMenuItem(value: item, child: Text(item)),
+        ],
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,
-        value: inputController.text.isEmpty ? null : inputController.text,
-        items: items.map((item) {
-          return DropdownMenuItem<String>(
-            value: item,
-            child: Text(item),
-          );
-        }).toList(),
-        itemHeight: 40,
         onChanged: (value) {
-          if (onChanged != null) {
-            onChanged!(value);
-          }
           if (value != null) {
             inputController.text = value;
+          }
+          if (onChanged != null) {
+            onChanged!(value);
           }
         },
       ),
