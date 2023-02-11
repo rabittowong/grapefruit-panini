@@ -34,7 +34,7 @@ class HouseholdModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['product'] = product;
     data['category'] = category;

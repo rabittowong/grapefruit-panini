@@ -18,11 +18,6 @@ class HouseholdTile extends StatelessWidget {
   Icon _getIcon(String category) {
     switch (HouseholdCategory.values
         .firstWhere((element) => element.toLabel() == category)) {
-      case HouseholdCategory.grocery:
-        return Icon(
-          Icons.shopping_cart_rounded,
-          color: ThemeColor.success[500],
-        );
       case HouseholdCategory.food:
         return Icon(
           Icons.emoji_food_beverage_rounded,
@@ -32,6 +27,11 @@ class HouseholdTile extends StatelessWidget {
         return Icon(
           Icons.time_to_leave_rounded,
           color: ThemeColor.info[500],
+        );
+      case HouseholdCategory.grocery:
+        return Icon(
+          Icons.shopping_cart_rounded,
+          color: ThemeColor.success[500],
         );
       default:
         return Icon(

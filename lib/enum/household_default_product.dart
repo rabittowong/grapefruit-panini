@@ -1,18 +1,22 @@
 enum HouseholdDefaultProduct {
+  dinner,
+  transport,
   streetMarket,
   hkFlavour,
   dchFoodMart,
   bestMart360,
   parknshop,
   necessary,
-  dinner,
-  transport,
   others,
 }
 
 extension ParseToString on HouseholdDefaultProduct {
   String toLabel() {
     switch (this) {
+      case HouseholdDefaultProduct.dinner:
+        return '晚餐';
+      case HouseholdDefaultProduct.transport:
+        return '交通';
       case HouseholdDefaultProduct.streetMarket:
         return '街市';
       case HouseholdDefaultProduct.hkFlavour:
@@ -25,10 +29,6 @@ extension ParseToString on HouseholdDefaultProduct {
         return '百佳';
       case HouseholdDefaultProduct.necessary:
         return '日用品';
-      case HouseholdDefaultProduct.dinner:
-        return '晚餐';
-      case HouseholdDefaultProduct.transport:
-        return '交通';
       case HouseholdDefaultProduct.others:
         return '其他';
     }

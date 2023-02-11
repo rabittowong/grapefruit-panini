@@ -54,17 +54,6 @@ class HouseholdEditState extends State<HouseholdEdit> {
 
     switch (HouseholdDefaultProduct.values
         .firstWhere((element) => element.toLabel() == value)) {
-      case HouseholdDefaultProduct.streetMarket:
-      case HouseholdDefaultProduct.hkFlavour:
-      case HouseholdDefaultProduct.dchFoodMart:
-      case HouseholdDefaultProduct.bestMart360:
-      case HouseholdDefaultProduct.parknshop:
-      case HouseholdDefaultProduct.necessary:
-        setState(() {
-          _product.text = value;
-          _category.text = HouseholdCategory.grocery.toLabel();
-        });
-        break;
       case HouseholdDefaultProduct.dinner:
         setState(() {
           _product.text = value;
@@ -75,6 +64,17 @@ class HouseholdEditState extends State<HouseholdEdit> {
         setState(() {
           _product.text = value;
           _category.text = HouseholdCategory.transport.toLabel();
+        });
+        break;
+      case HouseholdDefaultProduct.streetMarket:
+      case HouseholdDefaultProduct.hkFlavour:
+      case HouseholdDefaultProduct.dchFoodMart:
+      case HouseholdDefaultProduct.bestMart360:
+      case HouseholdDefaultProduct.parknshop:
+      case HouseholdDefaultProduct.necessary:
+        setState(() {
+          _product.text = value;
+          _category.text = HouseholdCategory.grocery.toLabel();
         });
         break;
       default:
@@ -119,18 +119,10 @@ class HouseholdEditState extends State<HouseholdEdit> {
         title: const Text('家用記綠'),
         centerTitle: true,
         actions: [
-          PopupMenuButton(
-            onSelected: (result) {
-              if (result == 0) {
-                _onRemove();
-              }
-            },
-            itemBuilder: (context) {
-              return [
-                const PopupMenuItem(value: 0, child: Text('刪除')),
-              ];
-            },
-          )
+          IconButton(
+            onPressed: _onRemove,
+            icon: const Icon(Icons.delete_rounded),
+          ),
         ],
       ),
       body: Form(

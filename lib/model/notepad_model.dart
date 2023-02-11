@@ -22,7 +22,7 @@ class NotepadModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['content'] = content;
     data['is_completed'] = isCompleted;

@@ -40,6 +40,7 @@ dependencies:
   intl: ^0.18.0
   getwidget: ^3.0.1
   collection: ^1.16.0
+  syncfusion_flutter_charts: ^20.4.49
 
 dev_dependencies:
   flutter_test:
@@ -94,14 +95,6 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-    - assets/img/avatar_anonymous.png
-    - assets/img/expenditure_not_found.jpg
-    - assets/img/household_not_found.jpg
-    - assets/riv/bounce_rabbit.riv
-    - assets/data/app_version_data.json
-    - assets/data/expenditure_data.json
-    - assets/data/health_data.json
-    - assets/data/household_data.json
-    - assets/data/laundry_data.json
-    - assets/data/notepad_data.json
-    - assets/data/profile_data.json
+    - assets/img/
+    - assets/riv/
+    - assets/data/

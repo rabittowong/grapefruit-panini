@@ -19,7 +19,7 @@ class AppVersionModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['app_version'] = appVersion;
     data['updated_at'] = updatedAt;

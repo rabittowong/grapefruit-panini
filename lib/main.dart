@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '柚子記事簿',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: const MaterialColor(0xfffd6b42, ThemeColor.swatch),
         inputDecorationTheme: InputDecorationTheme(

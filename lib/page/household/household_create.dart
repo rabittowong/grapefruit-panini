@@ -40,17 +40,6 @@ class HouseholdCreateState extends State<HouseholdCreate> {
 
     switch (HouseholdDefaultProduct.values
         .firstWhere((element) => element.toLabel() == value)) {
-      case HouseholdDefaultProduct.streetMarket:
-      case HouseholdDefaultProduct.hkFlavour:
-      case HouseholdDefaultProduct.dchFoodMart:
-      case HouseholdDefaultProduct.bestMart360:
-      case HouseholdDefaultProduct.parknshop:
-      case HouseholdDefaultProduct.necessary:
-        setState(() {
-          _product.text = value;
-          _category.text = HouseholdCategory.grocery.toLabel();
-        });
-        break;
       case HouseholdDefaultProduct.dinner:
         setState(() {
           _product.text = value;
@@ -61,6 +50,17 @@ class HouseholdCreateState extends State<HouseholdCreate> {
         setState(() {
           _product.text = value;
           _category.text = HouseholdCategory.transport.toLabel();
+        });
+        break;
+      case HouseholdDefaultProduct.streetMarket:
+      case HouseholdDefaultProduct.hkFlavour:
+      case HouseholdDefaultProduct.dchFoodMart:
+      case HouseholdDefaultProduct.bestMart360:
+      case HouseholdDefaultProduct.parknshop:
+      case HouseholdDefaultProduct.necessary:
+        setState(() {
+          _product.text = value;
+          _category.text = HouseholdCategory.grocery.toLabel();
         });
         break;
       default:

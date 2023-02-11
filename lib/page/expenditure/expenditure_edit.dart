@@ -122,18 +122,10 @@ class ExpenditureEditState extends State<ExpenditureEdit> {
         title: const Text('我的消費記綠'),
         centerTitle: true,
         actions: [
-          PopupMenuButton(
-            onSelected: (result) {
-              if (result == 0) {
-                _onRemove();
-              }
-            },
-            itemBuilder: (context) {
-              return [
-                const PopupMenuItem(value: 0, child: Text('刪除')),
-              ];
-            },
-          )
+          IconButton(
+            onPressed: _onRemove,
+            icon: const Icon(Icons.delete_rounded),
+          ),
         ],
       ),
       body: Form(
