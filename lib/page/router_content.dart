@@ -49,10 +49,8 @@ class _RouterContentState extends State<RouterContent> {
           _widgetTitles.elementAt(_selectedIndex),
           style: const TextStyle(color: Colors.white),
         ),
-        centerTitle: true,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
-      drawer: DrawerContent(profile: widget.profile),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const [

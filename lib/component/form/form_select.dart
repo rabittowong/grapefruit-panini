@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../theme_color.dart';
 import 'custom_dropdown.dart';
 
 class FormSelect extends StatelessWidget {
@@ -32,28 +31,18 @@ class FormSelect extends StatelessWidget {
           labelText: label,
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 5, vertical: 8),
-          isDense: true,
-          labelStyle: const TextStyle(fontSize: 14),
-          filled: true,
-          fillColor: Colors.white,
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black26, width: 1),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ThemeColor.primary[500]!, width: 1),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ThemeColor.danger[500]!, width: 1),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ThemeColor.danger[500]!, width: 1),
-          ),
         ),
         borderRadius: BorderRadius.circular(5),
         value: inputController.text.isEmpty ? null : inputController.text,
         items: [
           for (final item in items)
-            CustomDropdownMenuItem(value: item, child: Text(item)),
+            CustomDropdownMenuItem(
+              value: item,
+              child: Text(
+                item,
+                style: const TextStyle(color: Colors.black),
+              ),
+            ),
         ],
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,

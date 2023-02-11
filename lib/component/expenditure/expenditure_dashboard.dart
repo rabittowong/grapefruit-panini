@@ -66,13 +66,11 @@ class ExpenditureDashboard extends StatelessWidget {
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const GFTypography(
-                text: '目前預算',
-                type: GFTypographyType.typo6,
-                fontWeight: FontWeight.bold,
-                dividerHeight: 0,
+              const Text(
+                '目前預算',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              const Padding(padding: EdgeInsets.only(top: 5)),
+              const Padding(padding: EdgeInsets.only(top: 12)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -80,6 +78,7 @@ class ExpenditureDashboard extends StatelessWidget {
                   Text(NumberFormat('#,##0.00').format(budget)),
                 ],
               ),
+              const Padding(padding: EdgeInsets.only(top: 2)),
               GFProgressBar(
                 margin: const EdgeInsets.all(5),
                 lineHeight: 10,

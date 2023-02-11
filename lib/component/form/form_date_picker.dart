@@ -29,21 +29,6 @@ class FormDatePicker extends StatelessWidget {
         decoration: InputDecoration(
           prefixIcon: icon,
           labelText: label,
-          contentPadding: EdgeInsets.zero,
-          isDense: true,
-          labelStyle: const TextStyle(fontSize: 14),
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black26, width: 1),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ThemeColor.primary[500]!, width: 1),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ThemeColor.danger[500]!, width: 1),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ThemeColor.danger[500]!, width: 1),
-          ),
         ),
         onTap: () async {
           final DateTime? pickedDate = await showDatePicker(

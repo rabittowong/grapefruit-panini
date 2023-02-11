@@ -100,13 +100,13 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
           children: [
             GFCard(
               content: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const GFTypography(
-                    text: '新增消費記綠',
-                    type: GFTypographyType.typo6,
-                    fontWeight: FontWeight.bold,
-                    dividerHeight: 0,
+                  const Text(
+                    '新增消費記綠',
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
+                  const Padding(padding: EdgeInsets.only(top: 2)),
                   FormDatePicker(
                     inputController: _paidAt,
                     label: '日期',
@@ -187,6 +187,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
                     text: '新增',
                     onPressed: _onSubmit,
                   ),
+                  const Padding(padding: EdgeInsets.only(top: 5)),
                 ],
               ),
             ),

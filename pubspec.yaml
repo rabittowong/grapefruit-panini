@@ -95,7 +95,7 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/img/avatar_anonymous.png
-    - assets/img/expenditure_not_found.png
+    - assets/img/expenditure_not_found.jpg
     - assets/riv/bounce_rabbit.riv
     - assets/data/app_version_data.json
     - assets/data/expenditure_data.json

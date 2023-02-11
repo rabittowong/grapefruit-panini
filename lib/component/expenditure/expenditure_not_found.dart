@@ -12,7 +12,8 @@ class ExpenditureNotFound extends StatelessWidget {
           margin: const EdgeInsets.fromLTRB(15, 0, 15, 15),
           content: Column(
             children: const [
-              Image(image: AssetImage('assets/img/expenditure_not_found.png')),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              Image(image: AssetImage('assets/img/expenditure_not_found.jpg')),
               Padding(padding: EdgeInsets.only(top: 15)),
               Text('這個月目前還沒有支出，'),
               Text('快去創建一筆交易吧！'),

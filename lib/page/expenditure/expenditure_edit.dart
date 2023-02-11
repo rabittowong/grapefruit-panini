@@ -142,13 +142,13 @@ class ExpenditureEditState extends State<ExpenditureEdit> {
           children: [
             GFCard(
               content: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const GFTypography(
-                    text: '編輯消費記綠',
-                    type: GFTypographyType.typo6,
-                    fontWeight: FontWeight.bold,
-                    dividerHeight: 0,
+                  const Text(
+                    '編輯消費記綠',
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
+                  const Padding(padding: EdgeInsets.only(top: 2)),
                   FormDatePicker(
                     inputController: _paidAt,
                     label: '日期',
@@ -229,6 +229,7 @@ class ExpenditureEditState extends State<ExpenditureEdit> {
                     text: '儲存',
                     onPressed: _onSubmit,
                   ),
+                  const Padding(padding: EdgeInsets.only(top: 5)),
                 ],
               ),
             ),

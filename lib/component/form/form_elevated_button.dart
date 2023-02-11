@@ -21,10 +21,6 @@ class FormElevatedButton extends StatelessWidget {
           Expanded(
             child: ElevatedButton(
               onPressed: onPressed,
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(16),
-                backgroundColor: ThemeColor.primary[500],
-              ),
               child: Text(text),
             ),
           ),
