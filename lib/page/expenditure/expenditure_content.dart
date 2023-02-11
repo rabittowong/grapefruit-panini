@@ -43,7 +43,7 @@ class ExpenditureContentState extends State<ExpenditureContent> {
       body: Column(
         children: [
           GFCard(
-            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+            padding: const EdgeInsets.symmetric(vertical: 2),
             content: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

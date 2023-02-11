@@ -6,18 +6,18 @@ import '../../component/form/form_date_picker.dart';
 import '../../component/form/form_elevated_button.dart';
 import '../../component/form/form_input.dart';
 import '../../component/form/form_select.dart';
-import '../../enum/expenditure_category.dart';
-import '../../enum/expenditure_default_product.dart';
-import '../../model/expenditure_model.dart';
+import '../../enum/household_category.dart';
+import '../../enum/household_default_product.dart';
+import '../../model/household_model.dart';
 
-class ExpenditureCreate extends StatefulWidget {
-  const ExpenditureCreate({Key? key}) : super(key: key);
+class HouseholdCreate extends StatefulWidget {
+  const HouseholdCreate({Key? key}) : super(key: key);
 
   @override
-  ExpenditureCreateState createState() => ExpenditureCreateState();
+  HouseholdCreateState createState() => HouseholdCreateState();
 }
 
-class ExpenditureCreateState extends State<ExpenditureCreate> {
+class HouseholdCreateState extends State<HouseholdCreate> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   final TextEditingController _paidAt = TextEditingController();
   final TextEditingController _defaultProduct = TextEditingController();
@@ -38,42 +38,42 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
       return;
     }
 
-    switch (ExpenditureDefaultProduct.values
+    switch (HouseholdDefaultProduct.values
         .firstWhere((element) => element.toLabel() == value)) {
-      case ExpenditureDefaultProduct.breakfast:
-      case ExpenditureDefaultProduct.lunch:
-      case ExpenditureDefaultProduct.afternoonTea:
-      case ExpenditureDefaultProduct.dinner:
+      case HouseholdDefaultProduct.streetMarket:
+      case HouseholdDefaultProduct.hkFlavour:
+      case HouseholdDefaultProduct.dchFoodMart:
+      case HouseholdDefaultProduct.bestMart360:
+      case HouseholdDefaultProduct.parknshop:
+      case HouseholdDefaultProduct.necessary:
         setState(() {
           _product.text = value;
-          _category.text = ExpenditureCategory.food.toLabel();
+          _category.text = HouseholdCategory.grocery.toLabel();
         });
         break;
-      case ExpenditureDefaultProduct.railway:
-      case ExpenditureDefaultProduct.minibus:
-      case ExpenditureDefaultProduct.transport:
+      case HouseholdDefaultProduct.dinner:
         setState(() {
           _product.text = value;
-          _category.text = ExpenditureCategory.transport.toLabel();
+          _category.text = HouseholdCategory.food.toLabel();
         });
         break;
-      case ExpenditureDefaultProduct.shopping:
+      case HouseholdDefaultProduct.transport:
         setState(() {
           _product.text = value;
-          _category.text = ExpenditureCategory.entertainment.toLabel();
+          _category.text = HouseholdCategory.transport.toLabel();
         });
         break;
       default:
         setState(() {
           _product.text = '';
-          _category.text = ExpenditureCategory.others.toLabel();
+          _category.text = HouseholdCategory.others.toLabel();
         });
     }
   }
 
   void _onSubmit() {
     if (_formKey.currentState!.validate()) {
-      final ExpenditureModel expenditure = ExpenditureModel(
+      final HouseholdModel household = HouseholdModel(
         product: _product.text,
         category: _category.text,
         amount: double.parse(_amount.text),
@@ -83,7 +83,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
         updatedBy: 'updatedBy',
       );
 
-      debugPrint('created $expenditure');
+      debugPrint('created $household');
     }
   }
 
@@ -91,7 +91,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('我的消費記綠'),
+        title: const Text('家用記綠'),
         centerTitle: true,
       ),
       body: Form(
@@ -104,7 +104,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    '新增消費記綠',
+                    '新增家用',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 2)),
@@ -125,7 +125,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
                     inputController: _defaultProduct,
                     label: '消費項目',
                     icon: const Icon(Icons.shopping_basket_outlined),
-                    items: ExpenditureDefaultProduct.values
+                    items: HouseholdDefaultProduct.values
                         .map((e) => e.toLabel())
                         .toList(),
                     validator: (value) {
@@ -152,7 +152,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
                     inputController: _category,
                     label: '種類',
                     icon: const Icon(Icons.category_outlined),
-                    items: ExpenditureCategory.values
+                    items: HouseholdCategory.values
                         .map((e) => e.toLabel())
                         .toList(),
                     validator: (value) {

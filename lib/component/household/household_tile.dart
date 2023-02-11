@@ -2,36 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:intl/intl.dart';
 
-import '../../enum/expenditure_category.dart';
-import '../../model/expenditure_model.dart';
-import '../../page/expenditure/expenditure_edit.dart';
+import '../../enum/household_category.dart';
+import '../../model/household_model.dart';
+import '../../page/household/household_edit.dart';
 import '../../theme_color.dart';
 
-class ExpenditureTile extends StatelessWidget {
-  const ExpenditureTile(
-      {Key? key, required this.paidDate, required this.expenditures})
+class HouseholdTile extends StatelessWidget {
+  const HouseholdTile(
+      {Key? key, required this.paidDate, required this.households})
       : super(key: key);
 
   final String paidDate;
-  final List<ExpenditureModel> expenditures;
+  final List<HouseholdModel> households;
 
   Icon _getIcon(String category) {
-    switch (ExpenditureCategory.values
+    switch (HouseholdCategory.values
         .firstWhere((element) => element.toLabel() == category)) {
-      case ExpenditureCategory.food:
+      case HouseholdCategory.grocery:
+        return Icon(
+          Icons.shopping_cart_rounded,
+          color: ThemeColor.success[500],
+        );
+      case HouseholdCategory.food:
         return Icon(
           Icons.emoji_food_beverage_rounded,
           color: ThemeColor.danger[500],
         );
-      case ExpenditureCategory.transport:
+      case HouseholdCategory.transport:
         return Icon(
           Icons.time_to_leave_rounded,
           color: ThemeColor.info[500],
-        );
-      case ExpenditureCategory.entertainment:
-        return Icon(
-          Icons.park_rounded,
-          color: ThemeColor.success[500],
         );
       default:
         return Icon(
@@ -59,14 +59,14 @@ class ExpenditureTile extends StatelessWidget {
               ),
             ),
           ),
-          for (ExpenditureModel expenditure in expenditures)
+          for (HouseholdModel household in households)
             InkWell(
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: Row(
                   children: [
-                    _getIcon(expenditure.category),
+                    _getIcon(household.category),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -75,13 +75,13 @@ class ExpenditureTile extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              expenditure.product,
+                              household.product,
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold),
                             ),
                             const Padding(padding: EdgeInsets.only(top: 2)),
                             Text(
-                              expenditure.remark ?? '-',
+                              household.remark ?? '-',
                               style: const TextStyle(fontSize: 13),
                             ),
                           ],
@@ -89,7 +89,7 @@ class ExpenditureTile extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      NumberFormat('#,##0.00').format(expenditure.amount * -1),
+                      NumberFormat('#,##0.00').format(household.amount * -1),
                       style: TextStyle(color: ThemeColor.danger[500]),
                     ),
                   ],
@@ -100,7 +100,7 @@ class ExpenditureTile extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          ExpenditureEdit(expenditure: expenditure)),
+                          HouseholdEdit(household: household)),
                 );
               },
             ),

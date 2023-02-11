@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../component/drawer/drawer_content.dart';
 import '../model/profile_model.dart';
 import '../page/expenditure/expenditure_content.dart';
 import '../page/health/health_content.dart';
@@ -18,7 +17,7 @@ class RouterContent extends StatefulWidget {
 }
 
 class _RouterContentState extends State<RouterContent> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 3;
 
   static const _widgetOptions = [
     HomeContent(),

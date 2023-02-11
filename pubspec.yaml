@@ -96,10 +96,12 @@ flutter:
   assets:
     - assets/img/avatar_anonymous.png
     - assets/img/expenditure_not_found.jpg
+    - assets/img/household_not_found.jpg
     - assets/riv/bounce_rabbit.riv
     - assets/data/app_version_data.json
     - assets/data/expenditure_data.json
     - assets/data/health_data.json
+    - assets/data/household_data.json
     - assets/data/laundry_data.json
     - assets/data/notepad_data.json
     - assets/data/profile_data.json

@@ -1,0 +1,222 @@
+[
+  {
+    "uid": "U8xUq7I05J5tGNFZ7jlm03cPC6y8",
+    "amount": 413,
+    "product": "畫簿 聖誕氣球 貼紙",
+    "updated_at": "2022-05-27 06:35:28",
+    "updated_by": "lCg9EVu8150mXh98SI1rDtfUDK81",
+    "paid_at": "2022-10-08 03:05:49",
+    "remark": null,
+    "id": "8TC247GPTT7HVa6756YO",
+    "category": "其他"
+  },
+  {
+    "uid": "m9H1122tg9EvBO21g95E1gqF22CI",
+    "amount": 471.1,
+    "product": "交通",
+    "updated_at": "2022-11-13 20:16:24",
+    "updated_by": "8RyDfadtnC64y091tp5qj2rYGRup",
+    "paid_at": "2022-01-23 20:33:18",
+    "remark": null,
+    "id": "2da3J7lLh6yTMpVtY9MU",
+    "category": "交通"
+  },
+  {
+    "uid": "2lJo5oxmaNtP12Q232925RZjxo95",
+    "amount": 57.3,
+    "product": "街市",
+    "updated_at": "2022-12-01 17:44:49",
+    "updated_by": "SKsoKFEJYPo5Un88ZElhTY0sQ3m2",
+    "paid_at": "2022-10-04 01:22:20",
+    "remark": "蝦 生菜",
+    "id": "H6w19u635ZU2Bf53xSJV",
+    "category": "其他"
+  },
+  {
+    "uid": "xc7Rw08Jvi1fxW2eW4fbrjuSK4H1",
+    "amount": 93,
+    "product": "早餐",
+    "updated_at": "2022-09-05 07:36:32",
+    "updated_by": "1SaqNZ8yuGET3C8OXD9xIO95MD1q",
+    "paid_at": "2022-11-04 23:43:42",
+    "remark": null,
+    "id": "uG71biu1DwP2FBMAk1g7",
+    "category": "用餐"
+  },
+  {
+    "uid": "0eU2ln4lrEjA85d18LVZqcrL4k2S",
+    "amount": 4819.5,
+    "product": "午餐",
+    "updated_at": "2022-12-23 02:11:33",
+    "updated_by": "9k2abzrq83C55mMAS4AxR2O7f207",
+    "paid_at": "2022-06-20 05:50:39",
+    "remark": null,
+    "id": "7O6X9uk9U734U1bub9mV",
+    "category": "用餐"
+  },
+  {
+    "uid": "1uz1L495b7l51qEBvf7TXe2tStbB",
+    "amount": 51.6,
+    "product": "晚餐",
+    "updated_at": "2022-03-08 08:47:56",
+    "updated_by": "W79N9bBoN2u1039c623FeOe75nzF",
+    "paid_at": "2022-01-13 13:21:04",
+    "remark": "燒雞餐",
+    "id": "Bw93dQb0qQ6Z470m9Q54",
+    "category": "用餐"
+  },
+  {
+    "uid": "YhHt6cBHhf6DwnkL7Wwb14D2u6So",
+    "amount": 57.6,
+    "product": "蛋",
+    "updated_at": "2022-09-05 17:17:27",
+    "updated_by": "9sEuSVp7rTZEJLSd2SqE3umYo934",
+    "paid_at": "2022-02-27 22:51:16",
+    "remark": null,
+    "id": "0Yv5ySi1uqdr4K549hgY",
+    "category": "其他"
+  },
+  {
+    "uid": "vqq2LHZr1n3gGya65pR0hFlRCrFV",
+    "amount": 986,
+    "product": "惠康",
+    "updated_at": "2022-05-13 21:40:50",
+    "updated_by": "S39DK3onZQ5NjT9WyN9jD6X9lEUq",
+    "paid_at": "2022-06-14 14:17:40",
+    "remark": "濃湯寶",
+    "id": "8HQ2rIo740xuSzQ7m5P7",
+    "category": "其他"
+  },
+  {
+    "uid": "5B4bvO6NCBb35951zWn89uG7pa96",
+    "amount": 2787,
+    "product": "電費",
+    "updated_at": "2022-01-08 12:41:38",
+    "updated_by": "5D8tP23j4ZbjLoKPEDnQxk4bla56",
+    "paid_at": "2022-07-20 08:42:22",
+    "remark": null,
+    "id": "G83Jsqr5cq9tj89ip0qu",
+    "category": "其他"
+  },
+  {
+    "uid": "lOz6w8etW32WN5kS3KC4ly7S6hd9",
+    "amount": 464.9,
+    "product": "晚餐",
+    "updated_at": "2022-12-05 11:12:16",
+    "updated_by": "D4uS8Jz9EtbNYwgp4uD697Cgfy2r",
+    "paid_at": "2022-12-19 05:21:09",
+    "remark": null,
+    "id": "46c9wK83mSKCt5mVKY72",
+    "category": "用餐"
+  },
+  {
+    "uid": "1IV7v1G6Etn11m7wqu3dzpTMp2LC",
+    "amount": 6663.7,
+    "product": "Spa",
+    "updated_at": "2022-05-29 19:43:04",
+    "updated_by": "Zp2MEAIbn2NKcJOX9lU7wVkmtDHs",
+    "paid_at": "2022-04-26 19:27:51",
+    "remark": null,
+    "id": "AEjoKZ7fHD0BY4C5uofC",
+    "category": "休閒"
+  },
+  {
+    "uid": "7cVLBsvK3DiAl2a72yC66BB10uuC",
+    "amount": 21,
+    "product": "煤氣",
+    "updated_at": "2022-04-12 06:16:48",
+    "updated_by": "Uuux0MsRNC9ppYp3qx29JfTD654d",
+    "paid_at": "2022-08-05 00:15:00",
+    "remark": null,
+    "id": "KpNG24LFwGV8BFfpYmuK",
+    "category": "其他"
+  },
+  {
+    "uid": "QF38x6wjT0xj8w9EuKEo45WbaEiU",
+    "amount": 210,
+    "product": "晚餐",
+    "updated_at": "2022-01-16 14:34:32",
+    "updated_by": "tl8OV71dYq3emeE1Z2wRE4L95TK3",
+    "paid_at": "2022-12-21 14:22:26",
+    "remark": "法國小巴黎餐廳",
+    "id": "t5bn9tY175VyuZMa7Kws",
+    "category": "用餐"
+  },
+  {
+    "uid": "hT29u63Ly03U0X5D44aXuW375K3S",
+    "amount": 273.9,
+    "product": "午餐",
+    "updated_at": "2022-02-21 13:25:43",
+    "updated_by": "fhnVZV8NjoZ2HJQ28cxCcxfDP65z",
+    "paid_at": "2022-12-21 14:22:26",
+    "remark": "赤柱",
+    "id": "ATp381Gx37C548P407wA",
+    "category": "用餐"
+  },
+  {
+    "uid": "oyj79BQwiJD6nOzR5ePY8w34r7W8",
+    "amount": 33.1,
+    "product": "雞蛋",
+    "updated_at": "2022-06-06 21:18:17",
+    "updated_by": "iW0Er01H46I50MLaM626O7FvTf0K",
+    "paid_at": "2022-04-06 19:20:49",
+    "remark": null,
+    "id": "EL7Y12702c7QNRAx1t8d",
+    "category": "其他"
+  },
+  {
+    "uid": "966f7U1ncN73X1dY51y8gVCrLt4a",
+    "amount": 269.6,
+    "product": "小巴",
+    "updated_at": "2022-06-18 06:22:22",
+    "updated_by": "K62IfWfE5pmsfKH5Y0a99qqHLF9N",
+    "paid_at": "2022-09-22 14:08:14",
+    "remark": null,
+    "id": "0Xr2f0rSO4aY93RAPQ9I",
+    "category": "交通"
+  },
+  {
+    "uid": "MQ2UF0er0Ve0DAJvTl62p9Zmm1eg",
+    "amount": 6.1,
+    "product": "優品360",
+    "updated_at": "2022-11-13 11:42:41",
+    "updated_by": "yFiyr96QiYACA991cCp25K66ypfH",
+    "paid_at": "2022-11-06 09:35:21",
+    "remark": "口罩兩盒",
+    "id": "pQ594aR5Ji7WAnCpOoN8",
+    "category": "其他"
+  },
+  {
+    "uid": "Xpw6GliaZZRVgSZ7Xv3d5uiR6Y7M",
+    "amount": 1553.4,
+    "product": "利賓納",
+    "updated_at": "2022-01-24 02:14:57",
+    "updated_by": "Vj22f70G9y9cohg7BM9tm95SvD82",
+    "paid_at": "2022-11-06 09:35:21",
+    "remark": null,
+    "id": "Se5Xnp5HJms98iz4RL2e",
+    "category": "其他"
+  },
+  {
+    "uid": "eT39xx4Y5NZN9LYRt1n1zFE86JgB",
+    "amount": 29.1,
+    "product": "街市",
+    "updated_at": "2022-02-05 23:03:20",
+    "updated_by": "SGShxm8T5PAR8x9v0WChK75643WY",
+    "paid_at": "2022-11-06 09:35:21",
+    "remark": null,
+    "id": "vr5J2mT1cE0nQl6onR87",
+    "category": "其他"
+  },
+  {
+    "uid": "42otTim34GEjk57O7HSWOD7v1qn3",
+    "amount": 383.4,
+    "product": "交通",
+    "updated_at": "2022-07-31 10:37:30",
+    "updated_by": "s8dA62V0Siq3wBvBw135I4yj03IV",
+    "paid_at": "2022-02-10 15:17:50",
+    "remark": null,
+    "id": "RhwX2A7FqIMO4lUVO4UW",
+    "category": "交通"
+  }
+]

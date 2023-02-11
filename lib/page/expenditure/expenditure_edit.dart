@@ -141,6 +141,7 @@ class ExpenditureEditState extends State<ExpenditureEdit> {
         child: ListView(
           children: [
             GFCard(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
               content: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -229,7 +230,6 @@ class ExpenditureEditState extends State<ExpenditureEdit> {
                     text: '儲存',
                     onPressed: _onSubmit,
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 5)),
                 ],
               ),
             ),

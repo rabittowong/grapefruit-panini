@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../theme_color.dart';
-
 class FormInput extends StatelessWidget {
   final TextEditingController inputController;
   final String label;

@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(12),
             backgroundColor: ThemeColor.primary[500],
           ),
         ),
