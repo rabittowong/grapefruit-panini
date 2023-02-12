@@ -1,9 +1,9 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:grapefruit_panini/enum/time_period.dart';
 import 'package:intl/intl.dart';
 
+import '../../enum/time_period.dart';
 import '../../model/health_model.dart';
 import '../../page/health/health_create.dart';
 import '../../page/health/health_edit.dart';
@@ -84,9 +84,9 @@ class HealthTile extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     flex: 3,
-                    child: Container(),
+                    child: SizedBox(),
                   ),
                 ],
               ),
@@ -100,14 +100,11 @@ class HealthTile extends StatelessWidget {
                 );
               } else {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HealthCreate(
-                      recordedDate: recordedDate,
-                      timePeriod: TimePeriod.am,
-                    ),
-                  ),
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HealthCreate(
+                            recordedDate: recordedDate,
+                            timePeriod: TimePeriod.am)));
               }
             },
           ),
@@ -169,11 +166,9 @@ class HealthTile extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HealthCreate(
-                      recordedDate: recordedDate,
-                      timePeriod: TimePeriod.pm,
-                    ),
-                  ),
+                      builder: (context) => HealthCreate(
+                          recordedDate: recordedDate,
+                          timePeriod: TimePeriod.pm)),
                 );
               }
             },

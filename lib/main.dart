@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '生活點滴',
-      debugShowCheckedModeBanner: true,
+      title: '點點滴滴',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: const MaterialColor(0xfffd6b42, ThemeColor.swatch),
         inputDecorationTheme: InputDecorationTheme(

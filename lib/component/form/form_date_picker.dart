@@ -2,12 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class FormDatePicker extends StatelessWidget {
-  final TextEditingController inputController;
-  final String label;
-  final Icon icon;
-  final String? Function(String?) validator;
-  final void Function(String?)? onChanged;
-
   const FormDatePicker({
     Key? key,
     required this.inputController,
@@ -16,6 +10,12 @@ class FormDatePicker extends StatelessWidget {
     required this.validator,
     this.onChanged,
   }) : super(key: key);
+
+  final TextEditingController inputController;
+  final String label;
+  final Icon icon;
+  final String? Function(String?) validator;
+  final void Function(String?)? onChanged;
 
   @override
   Widget build(BuildContext context) {

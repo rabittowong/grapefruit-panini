@@ -119,9 +119,17 @@ class HouseholdEditState extends State<HouseholdEdit> {
       appBar: AppBar(
         title: const Text('編輯家用'),
         actions: [
-          IconButton(
-            onPressed: _onRemove,
-            icon: const Icon(Icons.delete_rounded),
+          PopupMenuButton(
+            onSelected: (result) {
+              if (result == 0) {
+                _onRemove();
+              }
+            },
+            itemBuilder: (context) {
+              return [
+                const PopupMenuItem(value: 0, child: Text('刪除')),
+              ];
+            },
           ),
         ],
       ),

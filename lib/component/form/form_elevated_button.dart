@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class FormElevatedButton extends StatelessWidget {
-  final String text;
-  final void Function() onPressed;
-
   const FormElevatedButton({
     Key? key,
     required this.text,
     required this.onPressed,
   }) : super(key: key);
+
+  final String text;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {

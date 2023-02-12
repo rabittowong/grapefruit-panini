@@ -7,13 +7,11 @@ class UnderConstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         GFCard(
           padding: const EdgeInsets.all(10),
           content: Column(
             children: const [
-              Padding(padding: EdgeInsets.only(top: 5)),
               Image(image: AssetImage('assets/img/under_construction.jpg')),
               Padding(padding: EdgeInsets.only(top: 20)),
               Text('抱歉！'),

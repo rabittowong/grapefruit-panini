@@ -6,7 +6,6 @@ import '../../component/household/household_month_record.dart';
 import '../../component/household/household_not_found.dart';
 import '../../model/household_model.dart';
 import '../../service/household_service.dart';
-import 'household_create.dart';
 
 class HouseholdContent extends StatefulWidget {
   const HouseholdContent({super.key});
@@ -81,15 +80,6 @@ class HouseholdContentState extends State<HouseholdContent> {
             ),
           )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add_rounded),
-        onPressed: () async {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const HouseholdCreate()),
-          );
-        },
       ),
     );
   }

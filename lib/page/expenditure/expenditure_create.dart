@@ -92,7 +92,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('新增消費記綠'),
+        title: const Text('新增消費記錄'),
       ),
       body: Form(
         key: _formKey,
@@ -104,7 +104,7 @@ class ExpenditureCreateState extends State<ExpenditureCreate> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    '新增消費記綠',
+                    '新增消費記錄',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 2)),

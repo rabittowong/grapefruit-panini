@@ -3,13 +3,6 @@ import 'package:flutter/material.dart';
 import 'custom_dropdown.dart';
 
 class FormSelect extends StatelessWidget {
-  final TextEditingController inputController;
-  final String label;
-  final Icon icon;
-  final List<String> items;
-  final String? Function(String?) validator;
-  final void Function(String?)? onChanged;
-
   const FormSelect({
     Key? key,
     required this.inputController,
@@ -19,6 +12,13 @@ class FormSelect extends StatelessWidget {
     required this.items,
     this.onChanged,
   }) : super(key: key);
+
+  final TextEditingController inputController;
+  final String label;
+  final Icon icon;
+  final List<String> items;
+  final String? Function(String?) validator;
+  final void Function(String?)? onChanged;
 
   @override
   Widget build(BuildContext context) {

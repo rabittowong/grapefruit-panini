@@ -40,7 +40,7 @@ class HealthHistoryContentState extends State<HealthHistoryContent> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('過往血壓紀綠'),
+        title: const Text('過往血壓記錄'),
       ),
       body: Column(
         children: [

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:grapefruit_panini/enum/time_period.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../enum/health_category.dart';
+import '../../enum/time_period.dart';
 import '../../model/health_model.dart';
 import '../../theme_color.dart';
 
@@ -114,7 +114,6 @@ class HealthChart extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  // const Padding(padding: EdgeInsets.only(top: 2)),
                   Text(
                     _getLatestDate(recentHealths),
                     style: TextStyle(
@@ -129,7 +128,6 @@ class HealthChart extends StatelessWidget {
               flex: 3,
               child: SfCartesianChart(
                 margin: const EdgeInsets.only(bottom: 10),
-                // plotAreaBorderWidth: 0,
                 primaryXAxis: CategoryAxis(
                   isVisible: false,
                 ),

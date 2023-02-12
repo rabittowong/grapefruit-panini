@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:grapefruit_panini/enum/health_category.dart';
 
+import '../../enum/health_category.dart';
 import '../../model/health_model.dart';
 import 'health_chart.dart';
 

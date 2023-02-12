@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../component/under_construction.dart';
+
 class RegisterContent extends StatelessWidget {
   const RegisterContent({super.key});
 
@@ -7,7 +9,7 @@ class RegisterContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('this is register page'),
+        child: UnderConstruction(),
       ),
     );
   }

@@ -86,7 +86,7 @@ class HealthCreateState extends State<HealthCreate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('新增血壓記綠'),
+        title: const Text('新增血壓記錄'),
       ),
       body: Form(
         key: _formKey,
@@ -98,7 +98,7 @@ class HealthCreateState extends State<HealthCreate> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    '新增血壓記綠',
+                    '新增血壓記錄',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 2)),

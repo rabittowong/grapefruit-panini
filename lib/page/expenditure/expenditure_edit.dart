@@ -120,11 +120,19 @@ class ExpenditureEditState extends State<ExpenditureEdit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('編輯消費記綠'),
+        title: const Text('編輯消費記錄'),
         actions: [
-          IconButton(
-            onPressed: _onRemove,
-            icon: const Icon(Icons.delete_rounded),
+          PopupMenuButton(
+            onSelected: (result) {
+              if (result == 0) {
+                _onRemove();
+              }
+            },
+            itemBuilder: (context) {
+              return [
+                const PopupMenuItem(value: 0, child: Text('刪除')),
+              ];
+            },
           ),
         ],
       ),
@@ -138,7 +146,7 @@ class ExpenditureEditState extends State<ExpenditureEdit> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    '編輯消費記綠',
+                    '編輯消費記錄',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 2)),

@@ -5,7 +5,6 @@ import '../../component/health/health_dashboard.dart';
 import '../../component/health/health_not_found.dart';
 import '../../model/health_model.dart';
 import '../../service/health_service.dart';
-import 'health_create.dart';
 import 'health_history.dart';
 
 class HealthContent extends StatelessWidget {
@@ -24,7 +23,7 @@ class HealthContent extends StatelessWidget {
             content: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const Text('查看過往記綠'),
+                const Text('查看過往'),
                 IconButton(
                   onPressed: () async {
                     Navigator.push(
@@ -57,15 +56,6 @@ class HealthContent extends StatelessWidget {
             ),
           )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add_rounded),
-        onPressed: () async {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const HealthCreate()),
-          );
-        },
       ),
     );
   }

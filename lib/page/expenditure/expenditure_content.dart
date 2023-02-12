@@ -6,7 +6,6 @@ import '../../component/expenditure/expenditure_month_record.dart';
 import '../../component/expenditure/expenditure_not_found.dart';
 import '../../model/expenditure_model.dart';
 import '../../service/expenditure_service.dart';
-import 'expenditure_create.dart';
 
 class ExpenditureContent extends StatefulWidget {
   const ExpenditureContent({super.key});
@@ -81,15 +80,6 @@ class ExpenditureContentState extends State<ExpenditureContent> {
             ),
           )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add_rounded),
-        onPressed: () async {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const ExpenditureCreate()),
-          );
-        },
       ),
     );
   }

@@ -90,7 +90,7 @@ class HealthEditState extends State<HealthEdit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('編輯血壓記綠'),
+        title: const Text('編輯血壓記錄'),
         actions: [
           IconButton(
             onPressed: _onRemove,
@@ -108,7 +108,7 @@ class HealthEditState extends State<HealthEdit> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    '編輯消費記綠',
+                    '編輯消費記錄',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 2)),

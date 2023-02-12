@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../component/under_construction.dart';
+
 class LoginContent extends StatelessWidget {
   const LoginContent({super.key});
 
@@ -7,7 +9,7 @@ class LoginContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('this is login page'),
+        child: UnderConstruction(),
       ),
     );
   }
