@@ -1,6 +1,6 @@
 enum HealthCategory {
-  systolicBloodPressure,
-  diastolicBloodPressure,
+  systolicPressure,
+  diastolicPressure,
   heartRate,
   stepCount,
 }
@@ -8,9 +8,9 @@ enum HealthCategory {
 extension ParseToString on HealthCategory {
   String toLabel() {
     switch (this) {
-      case HealthCategory.systolicBloodPressure:
+      case HealthCategory.systolicPressure:
         return '上壓';
-      case HealthCategory.diastolicBloodPressure:
+      case HealthCategory.diastolicPressure:
         return '下壓';
       case HealthCategory.heartRate:
         return '心率';

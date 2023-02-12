@@ -1,11 +1,11 @@
 {
-    "name": "柚子記事簿",
-    "short_name": "柚子記事簿",
+    "name": "生活點滴",
+    "short_name": "生活點滴",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#fd6b42",
-    "description": "助你紀錄生活中點點滴滴",
+    "description": "紀錄生活中的點點滴滴",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

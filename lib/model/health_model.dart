@@ -1,7 +1,7 @@
 class HealthModel {
   String? id;
-  late int systolicBloodPressure;
-  late int diastolicBloodPressure;
+  late int systolicPressure;
+  late int diastolicPressure;
   late int heartRate;
   int? stepCount;
   String? remark;
@@ -12,8 +12,8 @@ class HealthModel {
 
   HealthModel({
     this.id,
-    required this.systolicBloodPressure,
-    required this.diastolicBloodPressure,
+    required this.systolicPressure,
+    required this.diastolicPressure,
     required this.heartRate,
     this.stepCount,
     this.remark,
@@ -25,8 +25,8 @@ class HealthModel {
 
   HealthModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    systolicBloodPressure = int.parse(json['systolic_blood_pressure']);
-    diastolicBloodPressure = int.parse(json['diastolic_blood_pressure']);
+    systolicPressure = int.parse(json['systolic_pressure']);
+    diastolicPressure = int.parse(json['diastolic_pressure']);
     heartRate = int.parse(json['heart_rate']);
     stepCount = int.parse(json['step_count']);
     remark = json['remark'];
@@ -39,8 +39,8 @@ class HealthModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
-    data['systolic_blood_pressure'] = systolicBloodPressure;
-    data['diastolic_blood_pressure'] = diastolicBloodPressure;
+    data['systolic_pressure'] = systolicPressure;
+    data['diastolic_pressure'] = diastolicPressure;
     data['heart_rate'] = heartRate;
     data['step_count'] = stepCount;
     data['remark'] = remark;

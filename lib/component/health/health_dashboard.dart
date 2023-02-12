@@ -1,8 +1,9 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:grapefruit_panini/enum/health_category.dart';
 
 import '../../model/health_model.dart';
-import 'health_tile.dart';
+import 'health_chart.dart';
 
 class HealthDashboard extends StatelessWidget {
   const HealthDashboard({Key? key, required this.healths}) : super(key: key);
@@ -11,42 +12,31 @@ class HealthDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<HealthModel> recentHealths = healths.sublist(0, 7);
-
-    recentHealths.sort((a, b) {
-      return a.recordedAt.day - b.recordedAt.day;
-    });
-
-    for (HealthModel health in recentHealths) {
-      debugPrint('${health.recordedAt} - ${health.systolicBloodPressure}');
-    }
+    final DateTime recentDate = DateTime.now().add(const Duration(days: -7));
+    final List<HealthModel> recentHealths = healths
+        .where((health) => health.recordedAt.isAfter(recentDate))
+        .sortedBy((health) => health.recordedAt)
+        .toList();
 
     return ListView(
       children: [
-        HealthPresentTile(
-          category: HealthCategory.systolicBloodPressure,
+        HealthChart(
+          category: HealthCategory.systolicPressure,
           recentHealths: recentHealths,
         ),
-        HealthPresentTile(
-          category: HealthCategory.diastolicBloodPressure,
+        HealthChart(
+          category: HealthCategory.diastolicPressure,
           recentHealths: recentHealths,
         ),
-        HealthPresentTile(
+        HealthChart(
           category: HealthCategory.heartRate,
           recentHealths: recentHealths,
         ),
-        HealthPresentTile(
+        HealthChart(
           category: HealthCategory.stepCount,
           recentHealths: recentHealths,
         ),
       ],
     );
   }
-}
-
-class SalesData {
-  SalesData(this.year, this.sales);
-
-  final String year;
-  final double sales;
 }

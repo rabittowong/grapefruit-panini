@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:intl/intl.dart';
 
-import '../../component/dialog/dialog_confirm_delete.dart';
 import '../../component/form/form_date_picker.dart';
 import '../../component/form/form_elevated_button.dart';
 import '../../component/form/form_input.dart';
@@ -10,16 +9,18 @@ import '../../component/form/form_select.dart';
 import '../../enum/time_period.dart';
 import '../../model/health_model.dart';
 
-class HealthEdit extends StatefulWidget {
-  const HealthEdit({Key? key, required this.health}) : super(key: key);
+class HealthCreate extends StatefulWidget {
+  const HealthCreate({Key? key, this.recordedDate, this.timePeriod})
+      : super(key: key);
 
-  final HealthModel health;
+  final String? recordedDate;
+  final TimePeriod? timePeriod;
 
   @override
-  HealthEditState createState() => HealthEditState();
+  HealthCreateState createState() => HealthCreateState();
 }
 
-class HealthEditState extends State<HealthEdit> {
+class HealthCreateState extends State<HealthCreate> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   final TextEditingController _recordedAt = TextEditingController();
   final TextEditingController _timePeriod = TextEditingController();
@@ -33,16 +34,22 @@ class HealthEditState extends State<HealthEdit> {
   void initState() {
     super.initState();
 
-    _recordedAt.text =
-        DateFormat('yyyy-MM-dd').format(widget.health.recordedAt);
-    _timePeriod.text = widget.health.recordedAt.hour <= 12
-        ? TimePeriod.am.toLabel()
-        : TimePeriod.pm.toLabel();
-    _systolicPressure.text = widget.health.systolicPressure.toString();
-    _diastolicPressure.text = widget.health.diastolicPressure.toString();
-    _heartRate.text = widget.health.heartRate.toString();
-    _stepCount.text = widget.health.stepCount?.toString() ?? '';
-    _remark.text = widget.health.remark ?? '';
+    DateTime defaultRecordedAt;
+
+    if (widget.recordedDate != null) {
+      defaultRecordedAt = DateTime.parse(widget.recordedDate!)
+          .add(Duration(hours: widget.timePeriod == TimePeriod.am ? 6 : 18));
+    } else {
+      defaultRecordedAt = DateTime.now();
+    }
+
+    _recordedAt.text = DateFormat('yyyy-MM-dd').format(defaultRecordedAt);
+
+    if (defaultRecordedAt.hour <= 12) {
+      _timePeriod.text = TimePeriod.am.toLabel();
+    } else {
+      _timePeriod.text = TimePeriod.pm.toLabel();
+    }
   }
 
   void _onChangedTimePeriod(String? value) {
@@ -58,7 +65,6 @@ class HealthEditState extends State<HealthEdit> {
   void _onSubmit() {
     if (_formKey.currentState!.validate()) {
       final HealthModel health = HealthModel(
-        id: widget.health.id,
         systolicPressure: int.parse(_systolicPressure.text),
         diastolicPressure: int.parse(_diastolicPressure.text),
         heartRate: int.parse(_heartRate.text),
@@ -72,31 +78,15 @@ class HealthEditState extends State<HealthEdit> {
         updatedBy: 'updatedBy',
       );
 
-      debugPrint('updated $health');
+      debugPrint('created $health');
     }
-  }
-
-  void _onRemove() {
-    showDialog(
-        context: context,
-        builder: (context) => const DialogConfirmDelete()).then((value) {
-      if (value != null && value) {
-        debugPrint('deleted ${widget.health.id}');
-      }
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('編輯血壓記綠'),
-        actions: [
-          IconButton(
-            onPressed: _onRemove,
-            icon: const Icon(Icons.delete_rounded),
-          ),
-        ],
+        title: const Text('新增血壓記綠'),
       ),
       body: Form(
         key: _formKey,
@@ -108,7 +98,7 @@ class HealthEditState extends State<HealthEdit> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    '編輯消費記綠',
+                    '新增血壓記綠',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 2)),
@@ -204,7 +194,7 @@ class HealthEditState extends State<HealthEdit> {
                     },
                   ),
                   FormElevatedButton(
-                    text: '儲存',
+                    text: '新增',
                     onPressed: _onSubmit,
                   ),
                 ],

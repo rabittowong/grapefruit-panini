@@ -77,6 +77,7 @@ class HouseholdCreateState extends State<HouseholdCreate> {
         product: _product.text,
         category: _category.text,
         amount: double.parse(_amount.text),
+        remark: _remark.text.isNotEmpty ? _remark.text : null,
         paidAt: DateTime.parse(_paidAt.text),
         uid: 'uid',
         updatedAt: DateTime.now(),
@@ -91,8 +92,7 @@ class HouseholdCreateState extends State<HouseholdCreate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('家用記綠'),
-        centerTitle: true,
+        title: const Text('新增家用'),
       ),
       body: Form(
         key: _formKey,

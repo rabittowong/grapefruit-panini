@@ -21,4 +21,27 @@ class HealthService {
   static Stream<List<HealthModel>> findHealth() {
     return loadHealth().asStream();
   }
+
+  static Stream<List<HealthModel>> findHealthByRecordedAt(
+      DateTime recordedAtStart, DateTime recordedAtEnd) {
+    return loadHealth()
+        .then((data) => data
+            .where((element) =>
+                (element.recordedAt.isAtSameMomentAs(recordedAtStart) ||
+                    element.recordedAt.isAfter(recordedAtStart)) &&
+                element.recordedAt.isBefore(recordedAtEnd))
+            .toList())
+        .asStream();
+  }
+
+  static Stream<List<HealthModel>> findHealthByRecordedAtStart(
+      DateTime recordedAtStart) {
+    return loadHealth()
+        .then((data) => data
+            .where((element) =>
+                (element.recordedAt.isAtSameMomentAs(recordedAtStart) ||
+                    element.recordedAt.isAfter(recordedAtStart)))
+            .toList())
+        .asStream();
+  }
 }

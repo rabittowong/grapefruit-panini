@@ -8,8 +8,8 @@
     "heart_rate": "83",
     "remark": null,
     "id": "216lJb7U47f3W7c9pQMI",
-    "systolic_blood_pressure": "278",
-    "diastolic_blood_pressure": "53"
+    "systolic_pressure": "278",
+    "diastolic_pressure": "53"
   },
   {
     "uid": "48n3IcPeBxEDbR4xlf0495B7GjU2",
@@ -20,8 +20,8 @@
     "heart_rate": "56",
     "remark": null,
     "id": "0Ityr4T6MdBQDnYz3VHg",
-    "systolic_blood_pressure": "77",
-    "diastolic_blood_pressure": "435"
+    "systolic_pressure": "77",
+    "diastolic_pressure": "435"
   },
   {
     "uid": "L1u5u5O01ju9KomUyELEq1c7O19g",
@@ -32,8 +32,8 @@
     "heart_rate": "104",
     "remark": null,
     "id": "OM20y3DaKte5t9Tp2KAy",
-    "systolic_blood_pressure": "125",
-    "diastolic_blood_pressure": "46"
+    "systolic_pressure": "125",
+    "diastolic_pressure": "46"
   },
   {
     "uid": "34x49Bk27090e33FlQ044R4l508x",
@@ -44,8 +44,8 @@
     "heart_rate": "73",
     "remark": "運行狀況",
     "id": "nH1Z6W0ZE0CU2wH3A0Bm",
-    "systolic_blood_pressure": "251",
-    "diastolic_blood_pressure": "27"
+    "systolic_pressure": "251",
+    "diastolic_pressure": "27"
   },
   {
     "uid": "VHJNqlky12q525fy2GI2C5u6GI3X",
@@ -56,8 +56,8 @@
     "heart_rate": "84",
     "remark": null,
     "id": "hE0hfJeZgY6O7B3NH53q",
-    "systolic_blood_pressure": "38",
-    "diastolic_blood_pressure": "937"
+    "systolic_pressure": "38",
+    "diastolic_pressure": "937"
   },
   {
     "uid": "LB9gi1OI3JfG9G686e0mJ9cam980",
@@ -68,8 +68,8 @@
     "heart_rate": "34",
     "remark": null,
     "id": "5ypID23XvM1oaJ2Lcn0g",
-    "systolic_blood_pressure": "67",
-    "diastolic_blood_pressure": "492"
+    "systolic_pressure": "67",
+    "diastolic_pressure": "492"
   },
   {
     "uid": "SHoFgO1A943YZHuMZt2z12M228Cp",
@@ -80,8 +80,8 @@
     "heart_rate": "472",
     "remark": null,
     "id": "07pXOHo1897KL177wpcv",
-    "systolic_blood_pressure": "875",
-    "diastolic_blood_pressure": "77"
+    "systolic_pressure": "875",
+    "diastolic_pressure": "77"
   },
   {
     "uid": "3QUhe6Jr35a3GCHw2VrpRnxW4vwR",
@@ -92,8 +92,8 @@
     "heart_rate": "257",
     "remark": null,
     "id": "PlLw1d2cB5YYlCkieg1A",
-    "systolic_blood_pressure": "946",
-    "diastolic_blood_pressure": "97"
+    "systolic_pressure": "946",
+    "diastolic_pressure": "97"
   },
   {
     "uid": "yT3F008o05uLp0br770C4Av9Vy5h",
@@ -104,8 +104,8 @@
     "heart_rate": "181",
     "remark": "了解更多",
     "id": "95fh2DMU1oiXd643NzYu",
-    "systolic_blood_pressure": "87",
-    "diastolic_blood_pressure": "654"
+    "systolic_pressure": "87",
+    "diastolic_pressure": "654"
   },
   {
     "uid": "kA46nAl58al15bIvoLGVD1ld5w6a",
@@ -116,8 +116,8 @@
     "heart_rate": "105",
     "remark": null,
     "id": "PQP5O311i5oidnYf57pC",
-    "systolic_blood_pressure": "923",
-    "diastolic_blood_pressure": "24"
+    "systolic_pressure": "923",
+    "diastolic_pressure": "24"
   },
   {
     "uid": "Ej1vsR27fPbqGRJI5Q848n75CucW",
@@ -128,8 +128,8 @@
     "heart_rate": "90",
     "remark": null,
     "id": "30yPw3ru9jV8h8UHgcUz",
-    "systolic_blood_pressure": "12",
-    "diastolic_blood_pressure": "516"
+    "systolic_pressure": "12",
+    "diastolic_pressure": "516"
   },
   {
     "uid": "3989ycIOEH8483K3Eo0qSK9fYeO1",
@@ -140,8 +140,8 @@
     "heart_rate": "371",
     "remark": null,
     "id": "4g99mcT07sj6DF8Q3l5S",
-    "systolic_blood_pressure": "334",
-    "diastolic_blood_pressure": "24"
+    "systolic_pressure": "334",
+    "diastolic_pressure": "24"
   },
   {
     "uid": "6R3XzuI23T1k01ex8iYMU57fR59F",
@@ -152,8 +152,8 @@
     "heart_rate": "95",
     "remark": "超過1000款進口紐西蘭麥蘆卡蜂蜜",
     "id": "1eRrdb38VSPzVOqJtP3I",
-    "systolic_blood_pressure": "422",
-    "diastolic_blood_pressure": "405"
+    "systolic_pressure": "422",
+    "diastolic_pressure": "405"
   },
   {
     "uid": "w80I84555B1fQT8HowXv4s042j0R",
@@ -164,8 +164,8 @@
     "heart_rate": "342",
     "remark": "醫健通",
     "id": "10potC1QDfM0K0AVEP7G",
-    "systolic_blood_pressure": "77",
-    "diastolic_blood_pressure": "940"
+    "systolic_pressure": "77",
+    "diastolic_pressure": "940"
   },
   {
     "uid": "hU71iY1g67YnzYN6r4rboW1p691l",
@@ -176,8 +176,8 @@
     "heart_rate": "40",
     "remark": null,
     "id": "E1Sa28nxj4A2wA8ZE0Ze",
-    "systolic_blood_pressure": "233",
-    "diastolic_blood_pressure": "78"
+    "systolic_pressure": "233",
+    "diastolic_pressure": "78"
   },
   {
     "uid": "wSLVi7N57S7Xs96OY9k38QYt634J",
@@ -188,8 +188,8 @@
     "heart_rate": "49",
     "remark": null,
     "id": "0XP01h5VlAZ2i37Bh3oi",
-    "systolic_blood_pressure": "660",
-    "diastolic_blood_pressure": "40"
+    "systolic_pressure": "660",
+    "diastolic_pressure": "40"
   },
   {
     "uid": "QIw00l87Wah2T4sDg2ufQU4t7779",
@@ -200,43 +200,43 @@
     "heart_rate": "408",
     "remark": null,
     "id": "S8J7656Ibj6q66LzZLES",
-    "systolic_blood_pressure": "545",
-    "diastolic_blood_pressure": "84"
+    "systolic_pressure": "545",
+    "diastolic_pressure": "84"
   },
   {
     "uid": "Vf192TkB1ML2V0YALUAQi2U27U8a",
-    "recorded_at": "2022-06-05 11:11:23",
+    "recorded_at": "2023-02-07 11:11:23",
     "updated_at": "2022-11-11 11:27:02",
     "step_count": "3779",
     "updated_by": "dMPF70j4Bq7Iqhy88T17oddW0LZy",
     "heart_rate": "787",
     "remark": null,
     "id": "U11iPlF236Yw1y5JSEu3",
-    "systolic_blood_pressure": "134",
-    "diastolic_blood_pressure": "56"
+    "systolic_pressure": "134",
+    "diastolic_pressure": "56"
   },
   {
     "uid": "X2XH7sxy0AT3W1JbQHYMSMUATrMA",
-    "recorded_at": "2022-02-05 15:33:52",
+    "recorded_at": "2023-02-08 15:33:52",
     "updated_at": "2022-03-17 20:21:18",
     "step_count": "49",
     "updated_by": "1492q9IHjzlAw6rGCqs2nW5q5q69",
     "heart_rate": "168",
     "remark": null,
     "id": "F27IM1lkS6FjlqVJGQ3M",
-    "systolic_blood_pressure": "17",
-    "diastolic_blood_pressure": "104"
+    "systolic_pressure": "17",
+    "diastolic_pressure": "104"
   },
   {
     "uid": "P1XVkn6UC0g213ULS8ITGph6FZ60",
-    "recorded_at": "2022-08-14 10:47:52",
+    "recorded_at": "2023-02-11 10:47:52",
     "updated_at": "2022-09-15 22:00:15",
     "step_count": "519",
     "updated_by": "3B48g44514y5k30g57HY5HQR2vE9",
     "heart_rate": "656",
     "remark": null,
     "id": "t3paz78HfjRTf09pU0mZ",
-    "systolic_blood_pressure": "36",
-    "diastolic_blood_pressure": "198"
+    "systolic_pressure": "36",
+    "diastolic_pressure": "198"
   }
 ]

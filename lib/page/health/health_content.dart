@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
 import '../../component/health/health_dashboard.dart';
+import '../../component/health/health_not_found.dart';
 import '../../model/health_model.dart';
 import '../../service/health_service.dart';
+import 'health_create.dart';
+import 'health_history.dart';
 
 class HealthContent extends StatelessWidget {
   const HealthContent({super.key});
 
-  void _onHistoryPressed() {}
-
   @override
   Widget build(BuildContext context) {
+    final DateTime now = DateTime.now();
+    final DateTime recordedAtStart = DateTime(now.year, now.month, now.day - 7);
+
     return Scaffold(
       body: Column(
         children: [
@@ -22,7 +26,13 @@ class HealthContent extends StatelessWidget {
               children: [
                 const Text('查看過往記綠'),
                 IconButton(
-                  onPressed: _onHistoryPressed,
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HealthHistoryContent()),
+                    );
+                  },
                   icon: const Icon(Icons.chevron_right_rounded),
                 ),
               ],
@@ -30,7 +40,8 @@ class HealthContent extends StatelessWidget {
           ),
           Expanded(
             child: StreamBuilder<List<HealthModel>>(
-              stream: HealthService.findHealth(),
+              stream:
+                  HealthService.findHealthByRecordedAtStart(recordedAtStart),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(
@@ -40,7 +51,7 @@ class HealthContent extends StatelessWidget {
                     (snapshot.data?.length ?? 0) > 0) {
                   return HealthDashboard(healths: snapshot.data!);
                 } else {
-                  return const Center();
+                  return const HealthNotFound();
                 }
               },
             ),
@@ -52,7 +63,7 @@ class HealthContent extends StatelessWidget {
         onPressed: () async {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Center()),
+            MaterialPageRoute(builder: (context) => const HealthCreate()),
           );
         },
       ),

@@ -92,6 +92,7 @@ class HouseholdEditState extends State<HouseholdEdit> {
         product: _product.text,
         category: _category.text,
         amount: double.parse(_amount.text),
+        remark: _remark.text.isNotEmpty ? _remark.text : null,
         paidAt: DateTime.parse(_paidAt.text),
         uid: 'uid',
         updatedAt: DateTime.now(),
@@ -116,8 +117,7 @@ class HouseholdEditState extends State<HouseholdEdit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('家用記綠'),
-        centerTitle: true,
+        title: const Text('編輯家用'),
         actions: [
           IconButton(
             onPressed: _onRemove,

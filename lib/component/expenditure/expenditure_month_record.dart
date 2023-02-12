@@ -6,27 +6,27 @@ import 'package:getwidget/getwidget.dart';
 import 'package:intl/intl.dart';
 
 import '../../enum/budget.dart';
-import '../../model/household_model.dart';
+import '../../model/expenditure_model.dart';
 import '../../theme_color.dart';
-import 'household_tile.dart';
+import 'expenditure_tile.dart';
 
-class HouseholdDashboard extends StatelessWidget {
-  const HouseholdDashboard({Key? key, required this.households})
+class ExpenditureMonthRecord extends StatelessWidget {
+  const ExpenditureMonthRecord({Key? key, required this.expenditures})
       : super(key: key);
 
-  final List<HouseholdModel> households;
+  final List<ExpenditureModel> expenditures;
 
   @override
   Widget build(BuildContext context) {
-    final Map<String, List<HouseholdModel>> tile = groupBy(
-        households, (obj) => DateFormat('yyyy-MM-dd').format(obj.paidAt));
-    final List<String> tileKeys = tile.keys.toList();
-    tileKeys.sort();
+    final Map<String, List<ExpenditureModel>> tile = groupBy(
+        expenditures, (obj) => DateFormat('yyyy-MM-dd').format(obj.paidAt));
+    final List<String> tileKeys =
+        tile.keys.sorted((a, b) => a.compareTo(b)).reversed.toList();
 
-    final double totalAmount = households
+    final double totalAmount = expenditures
         .map((e) => e.amount)
         .reduce((value, element) => value + element);
-    final double budget = Budget.household.toValue();
+    final double budget = Budget.expenditure.toValue();
     final double progressBarPercentage = min(max(totalAmount / budget, 0), 1);
 
     late LinearGradient progressBarGradient;
@@ -94,9 +94,9 @@ class HouseholdDashboard extends StatelessWidget {
         Expanded(
           child: ListView.builder(
             itemBuilder: (context, index) {
-              return HouseholdTile(
-                paidDate: tileKeys[tileKeys.length - index - 1],
-                households: tile[tileKeys[tileKeys.length - index - 1]]!,
+              return ExpenditureTile(
+                paidDate: tileKeys[index],
+                expenditures: tile[tileKeys[index]]!,
               );
             },
             itemCount: tileKeys.length,

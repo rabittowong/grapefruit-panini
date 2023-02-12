@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
-class HouseholdNotFound extends StatelessWidget {
-  const HouseholdNotFound({Key? key}) : super(key: key);
+class HealthNotFound extends StatelessWidget {
+  const HealthNotFound({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +14,10 @@ class HouseholdNotFound extends StatelessWidget {
           content: Column(
             children: const [
               Padding(padding: EdgeInsets.only(top: 5)),
-              Image(image: AssetImage('assets/img/household_not_found.jpg')),
+              Image(image: AssetImage('assets/img/health_not_found.jpg')),
               Padding(padding: EdgeInsets.only(top: 20)),
-              Text('這個月目前還沒有使用家用，'),
-              Text('快給家裡買點東西吧！'),
+              Text('這個月目前還沒有血壓紀綠，'),
+              Text('快用血壓計量一下吧！'),
             ],
           ),
         ),

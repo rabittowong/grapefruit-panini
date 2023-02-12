@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:intl/intl.dart';
 
-import '../../component/expenditure/expenditure_month_record.dart';
-import '../../component/expenditure/expenditure_not_found.dart';
-import '../../model/expenditure_model.dart';
-import '../../service/expenditure_service.dart';
-import 'expenditure_create.dart';
+import '../../component/health/health_month_record.dart';
+import '../../component/health/health_not_found.dart';
+import '../../model/health_model.dart';
+import '../../service/health_service.dart';
 
-class ExpenditureContent extends StatefulWidget {
-  const ExpenditureContent({super.key});
+class HealthHistoryContent extends StatefulWidget {
+  const HealthHistoryContent({super.key});
 
   @override
-  ExpenditureContentState createState() => ExpenditureContentState();
+  HealthHistoryContentState createState() => HealthHistoryContentState();
 }
 
-class ExpenditureContentState extends State<ExpenditureContent> {
+class HealthHistoryContentState extends State<HealthHistoryContent> {
   DateTime _selectedMonth = DateTime.now();
 
   void _onLeftPressed() {
@@ -34,12 +33,15 @@ class ExpenditureContentState extends State<ExpenditureContent> {
 
   @override
   Widget build(BuildContext context) {
-    final DateTime paidAtStart =
+    final DateTime recordedAtStart =
         DateTime(_selectedMonth.year, _selectedMonth.month, 1);
-    final DateTime paidAtEnd =
+    final DateTime recordedAtEnd =
         DateTime(_selectedMonth.year, _selectedMonth.month + 1, 1);
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('過往血壓紀綠'),
+      ),
       body: Column(
         children: [
           GFCard(
@@ -63,9 +65,9 @@ class ExpenditureContentState extends State<ExpenditureContent> {
             ),
           ),
           Expanded(
-            child: StreamBuilder<List<ExpenditureModel>>(
-              stream: ExpenditureService.findExpenditureByPaidAt(
-                  paidAtStart, paidAtEnd),
+            child: StreamBuilder<List<HealthModel>>(
+              stream: HealthService.findHealthByRecordedAt(
+                  recordedAtStart, recordedAtEnd),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(
@@ -73,23 +75,14 @@ class ExpenditureContentState extends State<ExpenditureContent> {
                   );
                 } else if (snapshot.hasData &&
                     (snapshot.data?.length ?? 0) > 0) {
-                  return ExpenditureMonthRecord(expenditures: snapshot.data!);
+                  return HealthMonthRecord(healths: snapshot.data!);
                 } else {
-                  return const ExpenditureNotFound();
+                  return const HealthNotFound();
                 }
               },
             ),
           )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add_rounded),
-        onPressed: () async {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const ExpenditureCreate()),
-          );
-        },
       ),
     );
   }

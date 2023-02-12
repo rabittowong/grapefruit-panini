@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:intl/intl.dart';
 
-import '../../component/household/household_dashboard.dart';
+import '../../component/household/household_month_record.dart';
 import '../../component/household/household_not_found.dart';
 import '../../model/household_model.dart';
 import '../../service/household_service.dart';
@@ -73,7 +73,7 @@ class HouseholdContentState extends State<HouseholdContent> {
                   );
                 } else if (snapshot.hasData &&
                     (snapshot.data?.length ?? 0) > 0) {
-                  return HouseholdDashboard(households: snapshot.data!);
+                  return HouseholdMonthRecord(households: snapshot.data!);
                 } else {
                   return const HouseholdNotFound();
                 }

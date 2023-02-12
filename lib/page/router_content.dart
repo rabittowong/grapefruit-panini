@@ -17,7 +17,7 @@ class RouterContent extends StatefulWidget {
 }
 
 class _RouterContentState extends State<RouterContent> {
-  int _selectedIndex = 3;
+  int _selectedIndex = 0;
 
   static const _widgetOptions = [
     HomeContent(),
@@ -27,10 +27,10 @@ class _RouterContentState extends State<RouterContent> {
     LaundryContent(),
   ];
   static const _widgetTitles = [
-    '柚子記事簿',
-    '家用記錄',
-    '我的消費記錄',
-    '我的血壓記錄',
+    '生活點滴',
+    '家用',
+    '消費記錄',
+    '血壓記錄',
     '洗衣表',
   ];
 
@@ -55,19 +55,19 @@ class _RouterContentState extends State<RouterContent> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.edit_note_rounded),
-            label: '柚子記事簿',
+            label: '生活點滴',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home_rounded),
-            label: '家用記錄',
+            label: '家用',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.attach_money_rounded),
-            label: '我的消費記錄',
+            label: '消費記錄',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bloodtype_rounded),
-            label: '我的血壓記錄',
+            label: '血壓記錄',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.sanitizer_rounded),
