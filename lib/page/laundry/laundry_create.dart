@@ -10,7 +10,7 @@ class LaundryCreate extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          '新增洗衣表',
+          '新增洗衣記錄',
           style: TextStyle(color: Colors.white),
         ),
       ),

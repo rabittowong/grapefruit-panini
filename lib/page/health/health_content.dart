@@ -23,7 +23,7 @@ class HealthContent extends StatelessWidget {
             content: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const Text('查看過往'),
+                const Text('查看過往記錄'),
                 IconButton(
                   onPressed: () async {
                     Navigator.push(

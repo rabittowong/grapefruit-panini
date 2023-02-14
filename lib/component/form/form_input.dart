@@ -7,6 +7,7 @@ class FormInput extends StatelessWidget {
     required this.label,
     required this.icon,
     this.keyboardType = TextInputType.text,
+    this.obscureText = false,
     required this.validator,
     this.onChanged,
   }) : super(key: key);
@@ -15,6 +16,7 @@ class FormInput extends StatelessWidget {
   final String label;
   final Icon icon;
   final TextInputType keyboardType;
+  final bool obscureText;
   final String? Function(String?) validator;
   final void Function(String?)? onChanged;
 
@@ -30,6 +32,7 @@ class FormInput extends StatelessWidget {
           labelText: label,
         ),
         keyboardType: keyboardType,
+        obscureText: obscureText,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,
         onChanged: (value) {

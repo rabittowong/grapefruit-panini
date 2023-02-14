@@ -66,8 +66,8 @@ class MyApp extends StatelessWidget {
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const AuthLoading();
-              } else if (snapshot.hasData) {
-                return RouterContent(profile: snapshot.data!);
+              // } else if (snapshot.hasData) {
+              //   return RouterContent(profile: snapshot.data!);
               } else {
                 return const LoginContent();
               }

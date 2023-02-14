@@ -92,9 +92,17 @@ class HealthEditState extends State<HealthEdit> {
       appBar: AppBar(
         title: const Text('編輯血壓記錄'),
         actions: [
-          IconButton(
-            onPressed: _onRemove,
-            icon: const Icon(Icons.delete_rounded),
+          PopupMenuButton(
+            onSelected: (result) {
+              if (result == 0) {
+                _onRemove();
+              }
+            },
+            itemBuilder: (context) {
+              return [
+                const PopupMenuItem(value: 0, child: Text('刪除')),
+              ];
+            },
           ),
         ],
       ),
@@ -108,7 +116,7 @@ class HealthEditState extends State<HealthEdit> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    '編輯消費記錄',
+                    '編輯血壓記錄',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 2)),
